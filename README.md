@@ -9,4 +9,6 @@ A simple static site is included to help you learn Git commands. Open `index.htm
 ## GitHub Actions
 
 A workflow runs whenever changes are pushed to the `main` branch. It starts a simple HTTP server and ensures the Git Command Explorer can be loaded from `http://localhost:8000/index.html`.
+
 You can also trigger this workflow manually from the GitHub Actions tab. When dispatched, it attempts to open the site in a browser on the runner for a quick preview.
+
