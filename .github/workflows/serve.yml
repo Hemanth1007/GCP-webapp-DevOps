@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+  workflow_dispatch:
+
+
 jobs:
   preview:
     runs-on: ubuntu-latest
@@ -15,5 +18,10 @@ jobs:
           SERVER_PID=$!
           sleep 3
           curl -f http://localhost:8000/index.html
+
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            xdg-open http://localhost:8000/index.html || true
+          fi
+
           kill $SERVER_PID
 
